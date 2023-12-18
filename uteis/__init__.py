@@ -1,4 +1,5 @@
-def escjogo(msg):
+Jogoescolhido = {}
+def Esc_Jogo(msg):
     try:
         while True:
             Jogo = int(input(msg))
@@ -17,4 +18,13 @@ def escjogo(msg):
         print('\033[31mERROR! Nenhum valor digitado')
         return 0
     else:
-        return Jogo
+        Jogoescolhido['Sense'] = Jogo
+
+def Sense_Jogo(num):
+    Sense = float(input(num))
+    if Jogoescolhido['Sense'] == 'CS2':
+        print(f'Sua sense no VALORANT é : {Sense/3.18:.3f}')
+    elif Jogoescolhido['Sense'] == 'VALORANT':
+        print(f'Sua sense no CS2 é : {Sense*3.18:.3f}')
+    else:
+        print('Alguma coisa deu errado!')
