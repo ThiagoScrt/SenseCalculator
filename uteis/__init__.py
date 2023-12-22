@@ -1,4 +1,5 @@
 Jogoescolhido = {}
+
 def Esc_Jogo(msg):
     try:
         while True:
