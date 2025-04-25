@@ -1,14 +1,12 @@
-Jogoescolhido = {}
-
-def Esc_Jogo(msg):
+Jogoescolhido = []
+def Esc_Jogo(num):
     try:
         while True:
-            Jogo = int(input(msg))
-            if Jogo == 1:
-                Jogo = 'CS2'
-                break
-            elif Jogo == 2:
-                Jogo = 'VALORANT'
+            Jogo = int(input(num))
+            if Jogo == 1 or 2 or 3 or 4:
+                Jogo -= 1
+                Jogos = ["CS2", "VALORANT", "APEX", "ARK"] 
+                valor = Jogos[Jogo]
                 break
             else:
                 print('VALOR INVALIDO')
@@ -20,19 +18,33 @@ def Esc_Jogo(msg):
         print('\033[31mERROR! Nenhum valor digitado')
         return 0
     else:
-        Jogoescolhido['Sense'] = Jogo
+        Jogoescolhido.append(valor)
 
-def Sense_Jogo(num):
+def Sense_jogo1(num):
     Sense = float(input(num))
-    if Jogoescolhido['Sense'] == 'CS2':
-        Sense = Sense/3.18
-        print(f'A conversão direta da sua sense do CS2 para o VALORANT seria : {Sense}')
-        print(f'Para melhor compatibilidade recomendamos usar a sense : {Sense:.2f}')
-
-    elif Jogoescolhido['Sense'] == 'VALORANT':
-        Sense = Sense*3.18
-        print(f'A conversão direta da sua sense do VALORANT para o CS2 é : {Sense}')
-        print(f'Para melhor compatibilidade recomendamos usar a sense : {Sense:.2f}')
-
-    else:
-        print('Alguma coisa deu errado!')
+    while True:
+        if Jogoescolhido[0] == "CS2" "APEX":
+            Sense = Sense
+            break
+        elif Jogoescolhido[0] == "VALORANT":
+            Sense *= 3.1820
+            break
+        elif Jogoescolhido[0] == "ARK":
+            Sense /= 0.1260
+            break
+        else:
+            break
+    while True:
+        if Jogoescolhido[1] == "CS2" "APEX":
+            Sense = Sense
+            break
+        elif Jogoescolhido[1] == "VALORANT":
+            Sense /= 3.1820
+            break
+        elif Jogoescolhido[1] == "ARK":
+            Sense *= 0.1260
+            break
+        else:
+            break
+    
+    print(f"Sua sense no jogo {Jogoescolhido[1]} É {Sense:.3f}")
