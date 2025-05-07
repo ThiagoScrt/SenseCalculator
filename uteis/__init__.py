@@ -3,16 +3,12 @@ class Sensecalculator:
         self.Jogoescolhido = []
     def Esc_Jogo(self, num):
         try:
-            while True:
-                Jogo = int(input(num))
-                if 1 <= Jogo <= 4:
-                    Jogo -= 1
-                    Jogos = ["CS2", "VALORANT", "APEX", "ARK"] 
-                    valor = Jogos[Jogo]
-                    break
-                else:
-                    print('VALOR INVALIDO')
-                    break
+            Jogo = int(input(num))
+            if 1 <= Jogo <= 4:
+                Jogo -= 1
+                Jogos = ["CS2", "VALORANT", "APEX", "ARK"] 
+                valor = Jogos[Jogo]  
+
         except(ValueError,TypeError):
             print('\033[31mERROR! Por favor digite um valor valido!\033[m')
 
@@ -23,10 +19,6 @@ class Sensecalculator:
             self.Jogoescolhido.append(valor)
         
     def Sense_jogo(self, num):
-        if not self.Jogoescolhido:
-            print("Nenhum jogo foi escolhido ainda.")
-            return
-
         try:
             Sense_inicial = float(input(num))
         except (ValueError, TypeError):
